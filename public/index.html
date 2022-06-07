@@ -9,20 +9,20 @@
     <title>Sanchez Auto Detailing</title>
 </head>
 <body>
-    <header>
-        <div id="logo-and-nav">
-            <div id="logo">
+    <header class="container">
+        <div id="logo-and-nav" class="row">
+            <div id="logo" class="col">
                 LOGO
             </div>
-            <nav id="navigation">
-                <p>Packages and Services</p>
-                <p>Gallery</p>
+            <nav id="navigation" class="col row">
+                <a class="col" href="#packages-and-services">Packages and Services</a>
+                <a class="col" href="#gallery">Gallery</a>
             </nav>
         </div>
-        <div class="jumbotron">
+        <div class="jumbotron row">
             <!-- Background picture will be used here -->
-            <h1>Sanchez Auto Detailing</h1>
-            <div class="about">
+            <h1 class="col">Sanchez Auto Detailing</h1>
+            <div class="about col">
                 <p>MISSION STATEMENT MISSION STATEMENT ABOUT ABOUT ABOUT</p>
                 <button id="book-now-btn">
                     book now
@@ -30,62 +30,66 @@
             </div>
         </div>
     </header>
-    <main>
-        <section class="packages-and-services" id="packages-and-services">
-            <h2>Packages & Services</h2>
-            <div class="wash-and-vaccuum">
-                <h3>Wash & Vaccuum</h3>
-                <div class="services-card">
-                    PLACEHOLDER TEXT ABOUT WASH AND VACCUUM
+    <main class="container">
+        <section class="packages-and-services row" id="packages-and-services">
+            <h2 class="row">Packages & Services</h2>
+            <div class="packages-and-services row">
+                <div class="wash-and-vaccuum col">
+                    <h3>Wash & Vaccuum</h3>
+                    <div class="services-card">
+                        PLACEHOLDER TEXT ABOUT WASH AND VACUUM
+                    </div>
                 </div>
-            </div>
-            <div class="wash-and-wax">
-                <h3>Wash & Wax</h3>
-                <div class="services-card">
-                    PLACEHOLDER TEXT ABOUT WASH AND WAX
+                <div class="wash-and-wax col">
+                    <h3>Wash & Wax</h3>
+                    <div class="services-card">
+                        PLACEHOLDER TEXT ABOUT WASH AND WAX
+                    </div>
                 </div>
-            </div>
-            <div class="interior-detail">
-                <h3>Interior Detail</h3>
-                <div class="services-card">
-                    PLACEHOLDER TEXT ABOUT INTERIOR DETAIL
+                <div class="interior-detail col">
+                    <h3>Interior Detail</h3>
+                    <div class="services-card">
+                        PLACEHOLDER TEXT ABOUT INTERIOR DETAIL
+                    </div>
                 </div>
-            </div>
-            <div class="engine-bay-wash">
-                <h3>Engine Bay Wash</h3>
-                <div class="services-card">
-                    PLACEHOLDER TEXT ABOUT ENGINE BAY WASH
+                <div class="engine-bay-wash col">
+                    <h3>Engine Bay Wash</h3>
+                    <div class="services-card">
+                        PLACEHOLDER TEXT ABOUT ENGINE BAY WASH
+                    </div>
                 </div>
             </div>
         </section>
-        <section class="gallery" id="gallery">
-            <h2>Gallery</h2>
-            <div class="gallery-container">
+        <section class="gallery row" id="gallery">
+            <h2 class="row">Gallery</h2>
+            <div class="gallery-container row">
 
             </div>
         </section>
     </main>
-    <footer>
-        <div class="contact-and-link">
-            <div class="footer-contact">
-                information here
+    <footer class="container">
+        <div class="footer-content row">
+            <div class="contact-and-link col">
+                <div class="footer-contact">
+                    information here
+                </div>
+                <div class="footer-link">
+                    insert link here
+                </div>
             </div>
-            <div class="footer-link">
-                insert link here
+            <div class="social-media-and-icons col">
+                <p>placeholder1</p>
+                <p>placeholder2</p>
+                <p>placeholder3</p>
+                <p>placeholder4</p>
             </div>
-        </div>
-        <div class="social-media-and-icons">
-            <p>placeholder1</p>
-            <p>placeholder2</p>
-            <p>placeholder3</p>
-            <p>placeholder4</p>
-        </div>
-        <div class="footer-navigation">
-            link to packages and services
-        </div>
-        <div class="hours-and-location">
-            <p>hours</p>
-            <p>location</p>
+            <div class="footer-navigation col">
+                link to packages and services
+            </div>
+            <div class="hours-and-location col">
+                <p>hours</p>
+                <p>location</p>
+            </div>
         </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
