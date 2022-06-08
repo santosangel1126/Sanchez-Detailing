@@ -1,5 +1,5 @@
 const Sequelize = require('sequelize');
-const { extensions } = require('sequelize/types/utils/validator-extras');
+// const { extensions } = require('sequelize/types/utils/validator-extras');
 require('dotenv').config();
 
 const sequelize = new Sequelize(
@@ -11,6 +11,6 @@ const sequelize = new Sequelize(
     dialect: 'mysql',
     port: 3306,
   }
-);extensions
+);
 
 module.exports = sequelize;
