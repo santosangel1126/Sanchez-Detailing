@@ -16,7 +16,14 @@ body {
     font-family: 'Open Sans', sans-serif;;
 }
 
-#navigation ul{
+.jumbotron {
+    background-image: url("https://image.shutterstock.com/image-photo/woman-inside-her-car-gesticulate-600w-1941175525.jpg");
+    background-size: cover;
+    border-radius: 10px;
+    height: 400px;
+}
+
+.link-list ul{
     list-style: none;
 }
 
@@ -28,4 +35,12 @@ body {
 .social-media-and-icons a img {
     height: 50px;
     width: 50px;
+}
+
+.footer-navigation ul li a {
+    text-decoration: none;
+}
+
+.footer-navigation ul li a:hover {
+    color: var(--primary-color);
 }
