@@ -1,7 +1,27 @@
 // In controllers/user.js
-const uuid = require('uuid/v4');
+// const uuid = require('uuid');
+const { v4: uuidv4 } = require('uuid');
+
 const Users = require('../config/dbUsers.json');
 const { hashPassword } = require('../utilities/passwordService');
+
+// import { v4 as uuidv4 } from 'uuid';
+// uuidv4(); // ⇨ '9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d'
+
+const signup = async (req, res) => {
+  try {
+    let newUser = {
+      id: uuidv4(),
+      password: req.body.password,
+      hashedPassword: await hashPassword(req.body.password),
+      username: req.body.username
+    };
+    Users.push(newUser);
+    res.status(200).redirect('/users/all');
+  } catch (err) {
+    if (err) throw err;
+  }
+};
 
 const getUsers = async (req, res) => {
     res.json(Users);
@@ -12,21 +32,27 @@ const getUsers = async (req, res) => {
   const logout = async (req, res) => {
     res.send('you hit the logout in route');
   };
+
+  // const signup = async (req, res) => {
+  //   res.send('you hit the signup in route');
+  // };
   
-  const signup = async (req, res) => {
-    try {
-      let newUser = {
-        id: uuid(),
-        password: req.body.password,
-        hashedPassword: await hashPassword(req.body.password),
-        username: req.body.username
-      };
-      Users.push(newUser);
-      res.status(200).redirect('/users/all');
-    } catch (err) {
-      if (err) throw err;
-    }
-  };
+  // const signup = async (req, res) => {
+  //   try {
+  //     let newUser = {
+  //       id: uuidv4(),
+  //       password: req.body.password,
+  //       hashedPassword: await hashPassword(req.body.password),
+  //       username: req.body.username
+
+  //     };
+  //     Users.push(newUser);
+  //     res.status(200).redirect('/users/all');
+  //   } catch (err) {
+  //     if (err) throw err;
+  //   }
+  //   res.send('you hit the signup in route');
+  // };
   
 
   
