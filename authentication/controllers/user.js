@@ -3,7 +3,7 @@
 const { v4: uuidv4 } = require('uuid');
 
 const Users = require('../config/dbUsers.json');
-const { hashPassword } = require('../utilities/passwordService');
+const { hashPassword, checkPassword } = require('../utilities/passwordService');
 
 // import { v4 as uuidv4 } from 'uuid';
 // uuidv4(); // ⇨ '9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d'
@@ -26,9 +26,26 @@ const signup = async (req, res) => {
 const getUsers = async (req, res) => {
     res.json(Users);
   };
+
   const login = async (req, res) => {
-    res.send('you hit the login route');
+    try {
+      let user = Users.find(user => user.username === req.body.username);
+      // let hashedPassword = Users.find(user => user.hashedPassword);
+      let isMatch = await checkPassword(req.body.password, "hashedPassword");
+      if (user) {
+        if (isMatch) {
+          res.status(200).redirect('/users/authorized');
+        } else {
+          res.send('sorry password did not match');
+        }
+      } else {
+        res.send('sorry username does not match');
+      }
+    } catch (err) {
+      if (err) throw err;
+    }
   };
+  
   const logout = async (req, res) => {
     res.send('you hit the logout in route');
   };
