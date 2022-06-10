@@ -30,8 +30,7 @@ const getUsers = async (req, res) => {
   const login = async (req, res) => {
     try {
       let user = Users.find(user => user.username === req.body.username);
-      // let hashedPassword = Users.find(user => user.hashedPassword);
-      let isMatch = await checkPassword(req.body.password, "hashedPassword");
+      let isMatch = await checkPassword(req.body.password, user.hashedPassword);
       if (user) {
         if (isMatch) {
           res.status(200).redirect('/users/authorized');
