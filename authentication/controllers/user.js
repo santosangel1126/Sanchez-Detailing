@@ -1,5 +1,6 @@
 // In controllers/user.js
 // const uuid = require('uuid');
+const { token } = require('morgan');
 const { v4: uuidv4 } = require('uuid');
 const Users = require('../config/dbUsers.json');
 const { hashPassword, checkPassword } = require('../utilities/passwordService');
@@ -64,11 +65,12 @@ const getUsers = async (req, res) => {
   
   const logout = async (req, res) => {
     try {
-      res.clearCookie('token').redirect('/users/all');
+      res.clearCookie('token')
+      // console.log("cookie cleared")
+      res.send("hello from log out route")
     } catch (err) {
       if (err) throw err;
     }
-    res.send('you hit the logout in route');
   };
 
   
