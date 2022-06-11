@@ -13,9 +13,6 @@ const cookieOptions = {
 };
 
 
-// import { v4 as uuidv4 } from 'uuid';
-// uuidv4(); // ⇨ '9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d'
-
 const signup = async (req, res) => {
   try {
     let newUser = {
@@ -25,7 +22,13 @@ const signup = async (req, res) => {
       username: req.body.username
     };
     Users.push(newUser);
-    res.status(200).redirect('/users/all');
+    let token = await createToken(newUser);
+    console.log(token);
+    res
+      .cookie('token', token, cookieOptions)
+      .status(200)
+      .redirect('/users/authorized');
+    // res.status(200).redirect('/users/all');
   } catch (err) {
     if (err) throw err;
   }
@@ -37,7 +40,6 @@ const getUsers = async (req, res) => {
   } catch (err) {
     if (err) throw err;
   }
-    res.json(Users);
   };
 
   const login = async (req, res) => {
@@ -61,33 +63,31 @@ const getUsers = async (req, res) => {
 };
   
   const logout = async (req, res) => {
+    try {
+      res.clearCookie('token').redirect('/users/all');
+    } catch (err) {
+      if (err) throw err;
+    }
     res.send('you hit the logout in route');
   };
 
-  // const signup = async (req, res) => {
-  //   res.send('you hit the signup in route');
-  // };
-  
-  // const signup = async (req, res) => {
-  //   try {
-  //     let newUser = {
-  //       id: uuidv4(),
-  //       password: req.body.password,
-  //       hashedPassword: await hashPassword(req.body.password),
-  //       username: req.body.username
-
-  //     };
-  //     Users.push(newUser);
-  //     res.status(200).redirect('/users/all');
-  //   } catch (err) {
-  //     if (err) throw err;
-  //   }
-  //   res.send('you hit the signup in route');
-  // };
-  
-
   
   const cookieCheck = async (req, res) => {
-    res.send('you hit the authorized route, we will need to check your cookies');
+    const { token } = req.signedCookies;
+    if (token) {
+      try {
+        let {
+          user: { username, hashedPassword }
+        } = await isValidToken(token);
+        let user = Users.find(user => user.username === username);
+        res.send({ username: user.username, password: hashedPassword });
+      } catch (err) {
+        if (err) throw err;
+      }
+    } else {
+      res.send({ message: 'Sorry your token has expired.' });
+    }
   };
+    // res.send('you hit the authorized route, we will need to check your cookies');
+
   module.exports = { login, signup, logout, cookieCheck, getUsers };
