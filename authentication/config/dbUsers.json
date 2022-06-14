@@ -1,0 +1,17 @@
+[
+{
+    "username": "testname",
+    "hashedPassword": "$2b$10$lprsK4kY7fWm1jv/a97jLO17n5NIm1qLmEoN/lO6Ip2curY.jSnSm",
+    "plainTextPassword": "tyrooTheKangaroo"
+  },
+  {
+    "username": "hanna",
+    "hashedPassword": "$2b$10$CsQBUeevFRweWyIh7uYorutAmBFiy6d1/brgTWUP85U0zh3r3nxr6",
+    "plainTextPassword": "hannaBanna"
+  },
+  {
+    "username": "zane",
+    "hashedPassword": "$2b$10$q1akMvEKFrDF34F6Xd.kHe1.IN27b3zUYBHn8TsnY3oZ9Su.2hkoG",
+    "plainTextPassword": "zaneTheMane"
+  }
+]
