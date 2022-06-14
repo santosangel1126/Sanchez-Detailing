@@ -1,11 +1,11 @@
 const router = require('express').Router();
 
-const apiRoutes = require('./api');
 
-router.use('/api', apiRoutes);
-
-router.use((req, res) => { // remove this when we have a real route to go to for home-routes
-    res.send("<h1>Wrong Route!</h1>");
-})
+const {login, logout, signup, cookieCheck, getUsers} = require('./api/user-routes');
+router.get('/all', getUsers);
+router.get('/authorized', cookieCheck);
+router.post('/login', login);
+router.get('/logout', logout);
+router.post('/signup', signup);
 
 module.exports = router;

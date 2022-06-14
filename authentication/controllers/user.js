@@ -93,3 +93,5 @@ const getUsers = async (req, res) => {
     // res.send('you hit the authorized route, we will need to check your cookies');
 
   module.exports = { login, signup, logout, cookieCheck, getUsers };
+
+  // THIS IS DONE

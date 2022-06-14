@@ -1,19 +1,19 @@
-const { config } = require('dotenv');
-config({ debug: process.env.DEBUG });
-const express = require('express');
-const app = express();
-const logger = require('morgan');
-const cookieParser = require('cookie-parser');
-const userRoutes = require('./routes/user');
+const { config } = require('dotenv'); //done
+config({ debug: process.env.DEBUG }); // done
+const express = require('express'); //done
+const app = express(); // done
+const logger = require('morgan'); //done
+const cookieParser = require('cookie-parser'); // done
+const userRoutes = require('./routes/user'); // CHECK THIS LATER
 // LOADS ENVIRONMENT VARIABLES
 config({ debug: process.env.DEBUG });
 // LOGS HTTP METHODS
-app.use(logger('dev'));
+app.use(logger('dev')); // done
 // PARSES JSON
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+app.use(express.urlencoded({ extended: true })); //done
+app.use(express.json()); //done
 // PARSES COOKIES
-app.use(cookieParser(process.env.SECRET));
+app.use(cookieParser(process.env.SECRET)); // done
 // ROUTES
 app.use('/users', userRoutes); 
 // LISTENS ON PORT
