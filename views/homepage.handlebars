@@ -1,0 +1,11 @@
+<section class="package-container">
+    {{#each package}}
+        <div class="card bg-light mb-3" style="max-width: 18rem;">
+            <div class="card-title">{{packageName}}</div>
+            <div class="card-body">
+                <p class="card-text">{{packageTags}}</p>
+                <h5 class="card-header">{{packagePrice}}</h5>
+            </div>
+        </div>
+    {{/each}}
+</section>
