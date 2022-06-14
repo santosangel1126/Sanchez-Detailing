@@ -16,37 +16,62 @@ httpOnly: true,
 signed: true
 };
 
+router.get('/all', async(req, res) => {
+  try {
+    res.json(Users);
+  } catch (err) {
+    if (err) throw err;
+  }
+})
 
-const signup = async (req, res) => {
-try {
-  let newUser = {
-    id: uuidv4(),
-    password: req.body.password,
-    hashedPassword: await hashPassword(req.body.password),
-    username: req.body.username
-  };
-  Users.push(newUser);
-  let token = await createToken(newUser);
-  console.log(token);
-  res
-    .cookie('token', token, cookieOptions)
-    .status(200)
-    .redirect('/users/authorized');
-  // res.status(200).redirect('/users/all');
-} catch (err) {
-  if (err) throw err;
-}
-};
+router.get("/authorized", async(req, res) => {
+  const { token } = req.signedCookies;
+  if (token) {
+    try {
+      let {
+        user: { username, hashedPassword }
+      } = await isValidToken(token);
+      let user = Users.find(user => user.username === username);
+      res.send({ username: user.username, password: hashedPassword });
+    } catch (err) {
+      if (err) throw err;
+    }
+  } else {
+    res.send({ message: 'Sorry your token has expired.' });
+  }
+});
 
-const getUsers = async (req, res) => {
-try {
-  res.json(Users);
-} catch (err) {
-  if (err) throw err;
-}
-};
+router.get("/logout", async(req, res) => {
+  try {
+    res.clearCookie('token')
+    // console.log("cookie cleared")
+    res.send("hello from log out route")
+  } catch (err) {
+    if (err) throw err;
+  }
+});
 
-const login = async (req, res) => {
+router.post('/signup', async(req, res) => {
+  try {
+    let newUser = {
+      id: uuidv4(),
+      password: req.body.password,
+      hashedPassword: await hashPassword(req.body.password),
+      username: req.body.username
+    };
+    Users.push(newUser);
+    let token = await createToken(newUser);
+    console.log(token);
+    res
+      .cookie('token', token, cookieOptions)
+      .status(200)
+    // res.status(200).redirect('/users/all');
+  } catch (err) {
+    if (err) throw err;
+  }  
+});
+
+router.post('/login', async(req, res) => {
   try {
     let user = Users.find(user => user.username === req.body.username);
     let isMatch = await checkPassword(req.body.password, user.hashedPassword);
@@ -64,35 +89,8 @@ const login = async (req, res) => {
 } catch (err) {
   if (err) throw err;
 }
-};
+});
 
-const logout = async (req, res) => {
-  try {
-    res.clearCookie('token')
-    // console.log("cookie cleared")
-    res.send("hello from log out route")
-  } catch (err) {
-    if (err) throw err;
-  }
-};
-
-
-const cookieCheck = async (req, res) => {
-  const { token } = req.signedCookies;
-  if (token) {
-    try {
-      let {
-        user: { username, hashedPassword }
-      } = await isValidToken(token);
-      let user = Users.find(user => user.username === username);
-      res.send({ username: user.username, password: hashedPassword });
-    } catch (err) {
-      if (err) throw err;
-    }
-  } else {
-    res.send({ message: 'Sorry your token has expired.' });
-  }
-};
   // res.send('you hit the authorized route, we will need to check your cookies');
 
-module.exports = { login, signup, logout, cookieCheck, getUsers };
+module.exports = router;
