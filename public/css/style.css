@@ -18,8 +18,9 @@ body {
 
 /* Jumbotron styling */
 .jumbotron {
-    background-image: url("https://image.shutterstock.com/image-photo/woman-inside-her-car-gesticulate-600w-1941175525.jpg");
+    background-image: url("../images/adam-stefanca-hdMSxGizchk-unsplash.jpg");
     background-size: cover;
+    background-position: center;
     border-radius: 10px;
     /* height: 400px; */
 }
