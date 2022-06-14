@@ -16,12 +16,26 @@ body {
     font-family: 'Open Sans', sans-serif;;
 }
 
+/* Jumbotron styling */
 .jumbotron {
     background-image: url("https://image.shutterstock.com/image-photo/woman-inside-her-car-gesticulate-600w-1941175525.jpg");
     background-size: cover;
     border-radius: 10px;
-    height: 400px;
+    /* height: 400px; */
 }
+
+.jumbotron h1 {
+    padding: 10px;
+    text-shadow: 0 0 10px black;
+    font-size: 80px;
+}
+
+.about {
+    background-color: rgba(0, 0, 0, 0.329);
+    padding: 10px;
+}
+
+/* Jumbotron Styling End */
 
 .link-list ul{
     list-style: none;
