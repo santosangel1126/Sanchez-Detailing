@@ -101,7 +101,9 @@ On page refresh or on button click you will be presented with a random pair of a
 ## Roadmap
 
 - [x] Create a frontend to book appointments
-- [ ] Create backend to 
+- [ ] Rework the api routes
+- [ ] Add ability to update packages
+- [ ] Accept payments from customers
 
 See the [open issues](https://github.com/santosangel1126/Sanchez-Detailing/issues) for a full list of proposed features (and known issues).
 
