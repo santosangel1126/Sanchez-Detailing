@@ -26,4 +26,6 @@ app.use(routes);
 app.use(logger('dev'));
 app.use(cookieParser(process.env.SECRET));
 
-app.listen(PORT, () => console.log(`Now listening on ${PORT}`));
+sequelize.sync({ force: false }).then(() => {
+    app.listen(PORT, () => console.log(`Now listening on ${PORT}`));
+  });

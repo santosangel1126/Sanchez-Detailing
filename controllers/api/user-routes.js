@@ -24,7 +24,7 @@ router.get('/all', async(req, res) => {
   }
 })
 
-router.get("/authorized", async(req, res) => {
+router.post("/authorized", async(req, res) => {
   const { token } = req.signedCookies;
   if (token) {
     try {

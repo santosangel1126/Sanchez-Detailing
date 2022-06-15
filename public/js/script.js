@@ -4,4 +4,6 @@ var bookNow = function() {
     location.replace('./calendly.html');
 }
 
-bookButtonEl.addEventListener("click", bookNow)
+
+
+bookButtonEl.addEventListener("click", bookNow);
