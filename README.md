@@ -147,12 +147,12 @@ This was a group project and here are the links to their githubs!
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
-[contributors-shield]: https://img.shields.io/github/contributors/blakee-marcus/turbo-octo-spoon.svg?style=for-the-badge
-[contributors-url]: https://github.com/blakee-marcus/turbo-octo-spoon/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/blakee-marcus/turbo-octo-spoon.svg?style=for-the-badge
-[forks-url]: https://github.com/blakee-marcus/turbo-octo-spoon/network/members
-[stars-shield]: https://img.shields.io/github/stars/blakee-marcus/turbo-octo-spoon.svg?style=for-the-badge
-[stars-url]: https://github.com/blakee-marcus/turbo-octo-spoon/stargazers
-[issues-shield]: https://img.shields.io/github/issues/blakee-marcus/turbo-octo-spoon.svg?style=for-the-badge
-[issues-url]: https://github.com/blakee-marcus/turbo-octo-spoon/issues
+[contributors-shield]: https://img.shields.io/github/contributors/santosangel1126/Sanchez-Detailing.svg?style=for-the-badge
+[contributors-url]: https://github.com/santosangel1126/Sanchez-Detailing/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/santosangel1126/Sanchez-Detailing.svg?style=for-the-badge
+[forks-url]: https://github.com/santosangel1126/Sanchez-Detailing/network/members
+[stars-shield]: https://img.shields.io/github/stars/santosangel1126/Sanchez-Detailing.svg?style=for-the-badge
+[stars-url]: https://github.com/santosangel1126/Sanchez-Detailing/stargazers
+[issues-shield]: https://img.shields.io/github/issues/santosangel1126/Sanchez-Detailing.svg?style=for-the-badge
+[issues-url]: https://github.com/santosangel1126/Sanchez-Detailing/issues
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
