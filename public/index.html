@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="./css/style.css">
     <title>Sanchez Auto Detailing</title>
@@ -101,9 +102,88 @@
         </section>
         <section class="gallery row" id="gallery">
             <h2 class="fw-bold text-center">Gallery</h2>
-            <div class="gallery-container row">
+           
 <!-- Insert gallery stuff here -->
-            </div>
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+    <li data-target="#myCarousel" data-slide-to="3"></li>
+    <li data-target="#myCarousel" data-slide-to="4"></li>
+    <li data-target="#myCarousel" data-slide-to="5"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+    <div class="item active w-75 p-3 mx-auto">
+      <img class="w-auto p-3 mx-auto" src="./images/wheel.jpg" alt="wheel cleaning" >
+      <div class="carousel-caption">
+        <h3>Wheel & Rim Detail Cleaning</h3>
+        <p>Professional Quality Protectant and Shine</p>
+      </div>
+    </div>
+
+    <div class="item w-75 p-3 mx-auto">
+      <img src="./images/grill.jpg" alt="grill cleaning" >
+      <div class="carousel-caption">
+        <h3>Exterior Detail</h3>
+        <p>Targeting Tough Spots</p>
+      </div>
+    </div>
+  
+    <div class="item w-75 p-3 mx-auto">
+      <img src="./images/wipe.jpg" alt="wipe">
+      <div class="carousel-caption">
+        <h3>Wax and Shine</h3>
+        <p>Protecting the Undercaot</p>
+      </div>
+    </div>
+
+    <div class="item w-75 p-3 mx-auto">
+      <img class="w-auto p-3 mx-auto" src="./images/buffer.jpg" alt="buffer">
+      <div class="carousel-caption">
+        <h3>Buffer</h3>
+        <p>Buffer & Shine the Tough Spots</p>
+      </div>
+    </div>
+
+    <div class="item w-75 p-3 mx-auto">
+      <img class="w-auto p-3 mx-auto" class="pics" src="./images/engine.jpg" alt="engine">
+      <div class="carousel-caption">
+        <h3>Engine Cleaning</h3>
+        <p>Spotless Shine Inside & Out</p>
+      </div>
+    </div>
+
+    <div class="item w-75 p-3 mx-auto">
+      <img class="w-auto p-3 mx-auto" class="pics" src="./images/vaccuum.jpg" alt="vaccuum">
+      <div class="carousel-caption">
+        <h3>Vaccuum Included</h3>
+        <p>Removing all Dirt and Grime</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Left and right controls -->
+  <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+    <span class="sr-only"></span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+    <span class="sr-only"></span>
+  </a>
+</div>
+
+
+
+
+
+
+
         </section>
     </main>
     <footer class="container">
@@ -135,7 +215,18 @@
             </div>
         </div>
     </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
     <script src="./js/script.js"></script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
