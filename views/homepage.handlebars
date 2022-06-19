@@ -1,10 +1,21 @@
+<section class="jumbotron row">
+            <!-- Background picture will be used here -->
+            <h1 class="col-lg-9 col-sm-12 text-center fw-bold">Sanchez Auto Detailing</h1>
+            <div class="about align-self-center col-lg-3 col-sm-12 row">
+                <p>To deliver the utmost convenient service that will leave the vehicle with a clean shine and the customer with a smile.</p>
+                <button id="book-now-btn" class="btn btn-danger justify-self-center">
+                    <a href="/booknow">book now</a>
+                </button>
+            </div>
+</section>
+
 <section class="package-container">
-    {{#each package}}
+    {{#each packages as |package|}}
         <div class="card bg-light mb-3" style="max-width: 18rem;">
-            <div class="card-title">{{packageName}}</div>
+            <div class="card-title">{{package.name}}</div>
             <div class="card-body">
-                <p class="card-text">{{packageTags}}</p>
-                <h5 class="card-header">{{packagePrice}}</h5>
+                <p class="card-text">{{package.description}}</p>
+                <h5 class="card-header">{{package.price}}</h5>
             </div>
         </div>
     {{/each}}

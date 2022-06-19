@@ -18,6 +18,10 @@ Package.init(
         description: {
             type: DataTypes.STRING,
             allowNull: false
+        },
+        price: {
+            type: DataTypes.STRING,
+            allowNull: false
         }
     },
     {
@@ -29,4 +33,4 @@ Package.init(
     }
 );
 
-module.exports = packages;
+module.exports = Package;
