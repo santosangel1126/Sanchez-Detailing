@@ -7,6 +7,20 @@
     <title>Document</title>
 </head>
 <body>
+   {{!-- {{layouts < "login.handlebars" .}} --}}
+   {{ partial "views/index.html" . }}
+
+    <div>
+    <a href="/">Home</a>
+    {{#if loggedIn}}
+    <button id="logout" class="btn-no-style">Logout</button>
+    {{else}}
+    <a href="/login">Login</a>
+    {{/if}}
+  </div>
+
     {{{body}}}
+
 </body>
+<script src="./js/login.js"></script>
 </html>

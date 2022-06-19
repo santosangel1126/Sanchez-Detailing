@@ -16,7 +16,7 @@ const PORT = process.env.PORT || 3001;
 // const hbs = exphbs.create({ helpers });
 
 app.set('view engine', 'handlebars');
-app.engine('handlebars', exphbs({
+app.engine('handlebars', exphbs.engine({
   layoutsDir: __dirname + './views/layouts'
 }));
 

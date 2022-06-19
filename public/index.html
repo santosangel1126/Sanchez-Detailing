@@ -100,10 +100,29 @@
                 <p>Location: <p>Wherever the Building Is</p>
                 <p>Los Angeles, California</p>
                 </p>
+                <!-- <form class="login-form" method="POST" action="/api/users/login">
+                {{#each gallery.paintings as |painting|}}
+                  {{> painting-details}}
+                  {{/each}}
+                  <div>
+                    <label for="email-login">email:</label>
+                    <input type="text" id="email-login" />
+                  </div>
+                  <div>
+                    <label for="password-login">password:</label>
+                    <input type="password" id="password-login" />
+                  </div>
+                  <div>
+                    <button type="submit">login</button>
+                  </div> 
+                </form>  -->
+                <a href="/login">Login</a>
+
             </div>
         </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
     <script src="./js/script.js"></script>
+    <script src="./js/login.js"></script>
 </body>
 </html>
