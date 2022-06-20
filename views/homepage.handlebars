@@ -1,22 +1,104 @@
 <section class="jumbotron row">
-            <!-- Background picture will be used here -->
-            <h1 class="col-lg-9 col-sm-12 text-center fw-bold">Sanchez Auto Detailing</h1>
-            <div class="about align-self-center col-lg-3 col-sm-12 row">
-                <p>To deliver the utmost convenient service that will leave the vehicle with a clean shine and the customer with a smile.</p>
-                <button id="book-now-btn" class="btn btn-danger justify-self-center">
-                    <a href="/booknow">book now</a>
-                </button>
-            </div>
+    <!-- Background picture will be used here -->
+    <h1 class="col-lg-9 col-sm-12 text-center fw-bold align-self-center">Sanchez
+        Auto Detailing</h1>
+    <div class="about align-self-center col-lg-3 col-sm-12 row">
+        <p>To deliver the utmost convenient service that will leave the vehicle
+            with a clean shine and the customer with a smile.</p>
+        <button id="book-now-btn" class="btn btn-danger justify-self-center">
+            <a href="/booknow">book now</a>
+        </button>
+    </div>
 </section>
 
-<section class="package-container">
-    {{#each packages as |package|}}
-        <div class="card bg-light mb-3" style="max-width: 18rem;">
-            <div class="card-title">{{package.name}}</div>
-            <div class="card-body">
-                <p class="card-text">{{package.description}}</p>
-                <h5 class="card-header">{{package.price}}</h5>
+<section class="packages-and-services row" id="packages-and-services">
+    <h2 class="fw-bold text-center">Packages & Services</h2>
+    <div class="packages-and-services row">
+        {{#each packages as |package|}}
+        <div class="col">
+            <h3 class="card-title">{{package.name}}</h3>
+            <div class="services-card">
+                <p>{{package.description}}</p>
+                <p>{{package.price}}</p>
             </div>
         </div>
-    {{/each}}
+        {{/each}}
+    </div>
+</section>
+
+<section class="gallery row" id="gallery">
+    <h2 class="fw-bold text-center">Gallery</h2>
+    <!-- Insert gallery stuff here -->
+    <div id="myCarousel" class="carousel slide" data-bs-ride="true">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"></li>
+            <li data-bs-target="#myCarousel" data-bs-slide-to="1"></li>
+            <li data-bs-target="#myCarousel" data-bs-slide-to="2"></li>
+            <li data-bs-target="#myCarousel" data-bs-slide-to="3"></li>
+            <li data-bs-target="#myCarousel" data-bs-slide-to="4"></li>
+            <li data-bs-target="#myCarousel" data-bs-slide-to="5"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img class="d-block w-50 mx-auto" src="/images/wheel.jpg" alt="wheel cleaning" />
+                <div class="carousel-caption">
+                    <h3>Wheel & Rim Detail Cleaning</h3>
+                    <p>Professional Quality Protectant and Shine</p>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <img class="d-block w-50 mx-auto" src="/images/grill.jpg" alt="grill cleaning" />
+                <div class="carousel-caption">
+                    <h3>Exterior Detail</h3>
+                    <p>Targeting Tough Spots</p>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <img class="d-block w-50 mx-auto" src="/images/wipe.jpg" alt="wipe" />
+                <div class="carousel-caption">
+                    <h3>Wax and Shine</h3>
+                    <p>Protecting the Undercaot</p>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <img class="d-block w-50 mx-auto" src="/images/buffer.jpg" alt="buffer" />
+                <div class="carousel-caption">
+                    <h3>Buffer</h3>
+                    <p>Buffer & Shine the Tough Spots</p>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <img class="d-block w-50 mx-auto" class="pics" src="/images/engine.jpg" alt="engine" />
+                <div class="carousel-caption">
+                    <h3>Engine Cleaning</h3>
+                    <p>Spotless Shine Inside & Out</p>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <img class="d-block w-50 mx-auto" class="pics" src="/images/vaccuum-1.jpg" alt="vaccuum" />
+                <div class="carousel-caption">
+                    <h3>Vaccuum Included</h3>
+                    <p>Removing all Dirt and Grime</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Left and right controls -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
 </section>
