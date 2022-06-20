@@ -22,7 +22,7 @@ body {
     background-size: cover;
     background-position: center;
     border-radius: 10px;
-    /* height: 400px; */
+    height: 400px;
 }
 
 .jumbotron h1 {
@@ -58,4 +58,8 @@ body {
 
 .footer-navigation ul li a:hover {
     color: var(--primary-color);
+}
+
+.carousel-caption {
+    background-color: rgba(0, 0, 0, 0.418);
 }
